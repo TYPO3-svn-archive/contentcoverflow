@@ -1,0 +1,62 @@
+# contentcoverflow
+
+plugin.tx_contentcoverflow_pi1 {
+  # images
+  images.image_max_width = 350
+  images.image_max_height = 230
+  # tt_news
+  tt_news {
+    uploadDir = uploads/pics/
+  }
+  # topic
+  topicAtStart = 1
+  topicTimedFromNow = older
+  # app
+  coverFlowApp = imageflow
+  # setup
+  coverFlowSetup {
+    mooflow {
+      js.core.file = typo3conf/ext/contentcoverflow/res/MooFlow/mootools-1.2-core.js
+      js.more.file = typo3conf/ext/contentcoverflow/res/MooFlow/mootools-1.2-more.js
+      js.mod.file = typo3conf/ext/contentcoverflow/res/MooFlow/MooFlow.Mod.js
+      css.file = typo3conf/ext/contentcoverflow/res/MooFlow/MooFlow.css
+      js.config {
+        reflection = 0
+        heightRatio = 0.65
+        bgColor = #DDDDDD
+        factor = 300
+        offsetY = 100
+        startIndex = 0
+        useCaption = false
+        useWindowResize = false
+        useMouseWheel = true
+        useKeyInput = true
+        useViewer = false
+        useAutoPlay = false
+        interval = 5000
+      }
+    }
+    contentflow {
+      js.file = typo3conf/ext/contentcoverflow/res/ContentFlow/contentflow.js
+      css.file = typo3conf/ext/contentcoverflow/res/ContentFlow/contentflow.css
+    }
+    imageflow {
+      js.file = typo3conf/ext/contentcoverflow/res/imageflow_modified.js
+      css.file = typo3conf/ext/contentcoverflow/res/ImageFlow/imageflow.css
+      js.config {
+        # only boolean and integers allowed, strings are not supported (try with "..")
+        reflections = false
+        reflectionP = 0.6
+        imageFocusM = 1.8
+        slider = false
+        captions = false
+        circular = true
+        startID = 5
+        startAnimation = true
+        slideshow = true
+        slideshowAutoplay = true
+        slideshowSpeed = 5000
+      }
+    }
+  }
+}

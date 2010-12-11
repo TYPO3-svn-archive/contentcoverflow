@@ -1,0 +1,384 @@
+a:2:{s:4:"meta";a:3:{s:5:"title";s:17:"content coverflow";s:5:"descr";s:0:"";s:7:"options";a:2:{s:10:"usageCount";s:1:"1";s:19:"includeCodeAbstract";s:1:"1";}}s:5:"files";a:4:{s:14:"MD5_231e955f8d";a:5:{s:8:"filename";s:45:"pi1/class.tx_contentcoverflow_contentflow.php";s:8:"filesize";i:4673;s:6:"header";a:5:{s:4:"text";s:103:"
+
+class.tx_contentcoverflow_contentflow.php
+
+Coverflow inclusion for the 'contentcoverflow' extension.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:4:{i:0;s:45:"@author  Joerg Kummer <typo3 et enobe dot de>";i:1;s:15:"@package  TYPO3";i:2;s:31:"@subpackage tx_contentcoverflow";i:3;s:73:"@based on MooFlow (c) 2006 - 2010 Tobias Wetzel, http://outcut.de/MooFlow";}s:11:"other_index";a:4:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}s:8:"@package";a:1:{i:0;s:6:"TYPO3 ";}s:11:"@subpackage";a:1:{i:0;s:20:"tx_contentcoverflow ";}s:6:"@based";a:1:{i:0;s:66:"on MooFlow (c) 2006 - 2010 Tobias Wetzel, http://outcut.de/MooFlow";}}}s:3:"DAT";a:4:{i:1;a:8:{s:6:"header";s:39:"class tx_contentcoverflow_contentflow {";s:5:"class";i:1;s:11:"parentClass";s:31:"tx_contentcoverflow_contentflow";s:4:"cDat";a:5:{s:4:"text";s:103:"
+
+class.tx_contentcoverflow_contentflow.php
+
+Coverflow inclusion for the 'contentcoverflow' extension.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:4:{i:0;s:45:"@author  Joerg Kummer <typo3 et enobe dot de>";i:1;s:15:"@package  TYPO3";i:2;s:31:"@subpackage tx_contentcoverflow";i:3;s:73:"@based on MooFlow (c) 2006 - 2010 Tobias Wetzel, http://outcut.de/MooFlow";}s:11:"other_index";a:4:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}s:8:"@package";a:1:{i:0;s:6:"TYPO3 ";}s:11:"@subpackage";a:1:{i:0;s:20:"tx_contentcoverflow ";}s:6:"@based";a:1:{i:0;s:66:"on MooFlow (c) 2006 - 2010 Tobias Wetzel, http://outcut.de/MooFlow";}}}s:7:"content";a:2:{i:0;s:259:"
+	var $appConf;
+
+
+	/***************************************************************
+	 * There havn't been written templates to adjust output
+	 * You'll find all hardcoded HTML-snippets here
+	 ***************************************************************/
+
+	";i:1;i:-1;}s:12:"content_size";i:259;s:13:"content_lines";i:9;s:6:"atLine";i:50;}i:3;a:8:{s:6:"header";s:70:"function getHTML_coverFlowListElement($imageSrc,$imagealttext,$link) {";s:11:"parentClass";s:31:"tx_contentcoverflow_contentflow";s:11:"sectionText";a:2:{i:0;s:52:"There havn't been written templates to adjust output";i:1;s:44:"You'll find all hardcoded HTML-snippets here";}s:4:"cDat";a:5:{s:4:"text";s:38:"
+
+Get HTML of cover flow list element
+";s:5:"param";a:3:{i:0;a:2:{i:0;s:6:"string";i:1;s:9:"$imageSrc";}i:1;a:2:{i:0;s:6:"string";i:1;s:18:"$imagealttext: ...";}i:2;a:2:{i:0;s:6:"string";i:1;s:10:"$link: ...";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:21:"HTML of coverFlowList";}s:5:"other";a:1:{i:0;s:44:"@author	Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:344:"			// get HTML of image flow list element
+		$coverFlowListElement = '
+			<div class="item" href="' . $link . '" target="_self" >
+				<img class="content" src="' . $imageSrc . '" title="' . $title . '" alt="' . $imagealttext . '" />
+				<div class="caption">' . $title . '</div>
+			</div>
+		';
+			// output
+		return $coverFlowListElement;
+	}
+
+
+	";i:1;i:0;}s:12:"content_size";i:344;s:13:"content_lines";i:12;s:6:"atLine";i:69;}i:5;a:4:{s:6:"header";s:49:"function getHTML_coverFlow($HTML_coverFlowList) {";s:11:"parentClass";s:31:"tx_contentcoverflow_contentflow";s:4:"cDat";a:5:{s:4:"text";s:25:"
+
+Get HTML of cover flow
+";s:5:"param";a:1:{i:0;a:2:{i:0;s:6:"string";i:1;s:17:"HTML of coverFlow";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:17:"HTML of coverFlow";}s:5:"other";a:1:{i:0;s:44:"@author	Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:6:"atLine";i:89;}i:7;a:7:{s:6:"header";s:41:"function getHTML_additionalHeaderData() {";s:11:"parentClass";s:31:"tx_contentcoverflow_contentflow";s:4:"cDat";a:5:{s:4:"text";s:37:"
+
+Get additional headers as css & js
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}s:5:"other";a:1:{i:0;s:44:"@author	Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:507:"			// chek addons and get its values
+		if (is_array($this->appConf['addons.'])) {
+			foreach ($this->appConf['addons.'] as $key => $addon) {
+					// ATTENTION, it takes only one/last element. its not checked, if more than one addon is working korrectly
+				$addon_loader = 'load="' . $addon['name'] . '"';
+				$addon_stylesheet = '<link rel="stylesheet" href="' . $addon['css
+[...]
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/contentcoverflow/pi1/tx_contentcoverflow_contentflow.php']);
+}
+
+?>
+";i:1;i:1;}s:12:"content_size";i:1105;s:13:"content_lines";i:24;s:6:"atLine";i:118;}}s:10:"usageCount";a:4:{s:12:"H_6586d4e4a4";a:4:{s:3:"ALL";a:2:{s:12:"makeinstance";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:12:"makeinstance";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:17;s:15:"_functionHeader";s:39:"class tx_contentcoverflow_contentflow {";}s:12:"H_aa304d049d";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:13;s:15:"_functionHeader";s:70:"function getHTML_coverFlowListElement($imageSrc,$imagealttext,$link) {";}s:12:"H_b3ddd0607b";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:13;s:15:"_functionHeader";s:49:"function getHTML_coverFlow($HTML_coverFlowList) {";}s:12:"H_f9143d9ec7";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:13;s:15:"_functionHeader";s:41:"function getHTML_additionalHeaderData() {";}}}s:14:"MD5_fe9d30bde6";a:5:{s:8:"filename";s:43:"pi1/class.tx_contentcoverflow_imageflow.php";s:8:"filesize";i:4762;s:6:"header";a:5:{s:4:"text";s:101:"
+
+class.tx_contentcoverflow_imageflow.php
+
+Coverflow inclusion for the 'contentcoverflow' extension.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:4:{i:0;s:45:"@author  Joerg Kummer <typo3 et enobe dot de>";i:1;s:15:"@package  TYPO3";i:2;s:31:"@subpackage tx_contentcoverflow";i:3;s:73:"@based on MooFlow (c) 2006 - 2010 Tobias Wetzel, http://outcut.de/MooFlow";}s:11:"other_index";a:4:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}s:8:"@package";a:1:{i:0;s:6:"TYPO3 ";}s:11:"@subpackage";a:1:{i:0;s:20:"tx_contentcoverflow ";}s:6:"@based";a:1:{i:0;s:66:"on MooFlow (c) 2006 - 2010 Tobias Wetzel, http://outcut.de/MooFlow";}}}s:3:"DAT";a:4:{i:1;a:8:{s:6:"header";s:37:"class tx_contentcoverflow_imageflow {";s:5:"class";i:1;s:11:"parentClass";s:29:"tx_contentcoverflow_imageflow";s:4:"cDat";a:5:{s:4:"text";s:101:"
+
+class.tx_contentcoverflow_imageflow.php
+
+Coverflow inclusion for the 'contentcoverflow' extension.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:4:{i:0;s:45:"@author  Joerg Kummer <typo3 et enobe dot de>";i:1;s:15:"@package  TYPO3";i:2;s:31:"@subpackage tx_contentcoverflow";i:3;s:73:"@based on MooFlow (c) 2006 - 2010 Tobias Wetzel, http://outcut.de/MooFlow";}s:11:"other_index";a:4:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}s:8:"@package";a:1:{i:0;s:6:"TYPO3 ";}s:11:"@subpackage";a:1:{i:0;s:20:"tx_contentcoverflow ";}s:6:"@based";a:1:{i:0;s:66:"on MooFlow (c) 2006 - 2010 Tobias Wetzel, http://outcut.de/MooFlow";}}}s:7:"content";a:2:{i:0;s:258:"
+	var $appConf;
+
+	/***************************************************************
+	 * There havn't been written templates to adjust output
+	 * You'll find all hardcoded HTML-snippets here
+	 ***************************************************************/
+
+	";i:1;i:-1;}s:12:"content_size";i:258;s:13:"content_lines";i:8;s:6:"atLine";i:50;}i:3;a:8:{s:6:"header";s:99:"function getHTML_coverFlowListElement($imageSrc, $title, $imagealttext, $link, $target = '_self') {";s:11:"parentClass";s:29:"tx_contentcoverflow_imageflow";s:11:"sectionText";a:2:{i:0;s:52:"There havn't been written templates to adjust output";i:1;s:44:"You'll find all hardcoded HTML-snippets here";}s:4:"cDat";a:5:{s:4:"text";s:38:"
+
+Get HTML of cover flow list element
+";s:5:"param";a:5:{i:0;a:2:{i:0;s:6:"string";i:1;s:9:"$imageSrc";}i:1;a:2:{i:0;s:6:"string";i:1;s:6:"$title";}i:2;a:2:{i:0;s:6:"string";i:1;s:13:"$imagealttext";}i:3;a:2:{i:0;s:6:"string";i:1;s:5:"$link";}i:4;a:2:{i:0;s:6:"string";i:1;s:7:"$target";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:26:"$HTML_coverFlowListElement";}s:5:"other";a:1:{i:0;s:44:"@author Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:300:"			// get HTML of image flow list element
+		$HTML_coverFlowListElement = '
+			<img class="if_image" src="' . $imageSrc . '" title="' . htmlSpecialChars($title) . '" alt="' . htmlSpecialChars($imagealttext) . '" longdesc="' . $link . '" />
+		';
+			// output
+		return $HTML_coverFlowListElement;
+	}
+
+
+	";i:1;i:0;}s:12:"content_size";i:300;s:13:"content_lines";i:9;s:6:"atLine";i:70;}i:5;a:4:{s:6:"header";s:49:"function getHTML_coverFlow($HTML_coverFlowList) {";s:11:"parentClass";s:29:"tx_contentcoverflow_imageflow";s:4:"cDat";a:5:{s:4:"text";s:25:"
+
+Get HTML of cover flow
+";s:5:"param";a:1:{i:0;a:2:{i:0;s:6:"string";i:1;s:19:"$HTML_coverFlowList";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:15:"$HTML_coverFlow";}s:5:"other";a:1:{i:0;s:44:"@author Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:6:"atLine";i:87;}i:7;a:7:{s:6:"header";s:41:"function getHTML_additionalHeaderData() {";s:11:"parentClass";s:29:"tx_contentcoverflow_imageflow";s:4:"cDat";a:5:{s:4:"text";s:37:"
+
+Get additional headers as css & js
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:4:"void";}s:5:"other";a:1:{i:0;s:44:"@author Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:507:"			// get js configs
+			// get topical element and overwrite startID in appConf['js.']['config.']
+		if ($this->appConf['topicAtStart']) {
+			$this->appConf['js.']['config.']['startID'] = $this->appConf['topicId'] +1;
+		}
+			// only boolean and integers allowed, strings ar not supported
+		if (is_array($this->appConf['js.']['config.'])) {
+			$configArray = array();
+			foreac
+[...]
+{
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/contentcoverflow/pi1/tx_contentcoverflow_imageflow.php']);
+}
+
+?>
+";i:1;i:1;}s:12:"content_size";i:1444;s:13:"content_lines";i:39;s:6:"atLine";i:105;}}s:10:"usageCount";a:4:{s:12:"H_f2f295b684";a:4:{s:3:"ALL";a:2:{s:12:"makeinstance";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:12:"makeinstance";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:14;s:15:"_functionHeader";s:37:"class tx_contentcoverflow_imageflow {";}s:12:"H_efdf782a5a";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:14;s:15:"_functionHeader";s:99:"function getHTML_coverFlowListElement($imageSrc, $title, $imagealttext, $link, $target = '_self') {";}s:12:"H_b3ddd0607b";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:12;s:15:"_functionHeader";s:49:"function getHTML_coverFlow($HTML_coverFlowList) {";}s:12:"H_f9143d9ec7";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:12;s:15:"_functionHeader";s:41:"function getHTML_additionalHeaderData() {";}}}s:14:"MD5_e9ce6aab8a";a:5:{s:8:"filename";s:41:"pi1/class.tx_contentcoverflow_mooflow.php";s:8:"filesize";i:5431;s:6:"header";a:5:{s:4:"text";s:99:"
+
+class.tx_contentcoverflow_mooflow.php
+
+Coverflow inclusion for the 'contentcoverflow' extension.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:4:{i:0;s:45:"@author  Joerg Kummer <typo3 et enobe dot de>";i:1;s:15:"@package  TYPO3";i:2;s:31:"@subpackage tx_contentcoverflow";i:3;s:73:"@based on MooFlow (c) 2006 - 2010 Tobias Wetzel, http://outcut.de/MooFlow";}s:11:"other_index";a:4:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}s:8:"@package";a:1:{i:0;s:6:"TYPO3 ";}s:11:"@subpackage";a:1:{i:0;s:20:"tx_contentcoverflow ";}s:6:"@based";a:1:{i:0;s:66:"on MooFlow (c) 2006 - 2010 Tobias Wetzel, http://outcut.de/MooFlow";}}}s:3:"DAT";a:4:{i:1;a:8:{s:6:"header";s:35:"class tx_contentcoverflow_mooflow {";s:5:"class";i:1;s:11:"parentClass";s:27:"tx_contentcoverflow_mooflow";s:4:"cDat";a:5:{s:4:"text";s:99:"
+
+class.tx_contentcoverflow_mooflow.php
+
+Coverflow inclusion for the 'contentcoverflow' extension.
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:4:{i:0;s:45:"@author  Joerg Kummer <typo3 et enobe dot de>";i:1;s:15:"@package  TYPO3";i:2;s:31:"@subpackage tx_contentcoverflow";i:3;s:73:"@based on MooFlow (c) 2006 - 2010 Tobias Wetzel, http://outcut.de/MooFlow";}s:11:"other_index";a:4:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}s:8:"@package";a:1:{i:0;s:6:"TYPO3 ";}s:11:"@subpackage";a:1:{i:0;s:20:"tx_contentcoverflow ";}s:6:"@based";a:1:{i:0;s:66:"on MooFlow (c) 2006 - 2010 Tobias Wetzel, http://outcut.de/MooFlow";}}}s:7:"content";a:2:{i:0;s:258:"
+	var $appConf;
+
+	/***************************************************************
+	 * There havn't been written templates to adjust output
+	 * You'll find all hardcoded HTML-snippets here
+	 ***************************************************************/
+
+	";i:1;i:-1;}s:12:"content_size";i:258;s:13:"content_lines";i:8;s:6:"atLine";i:50;}i:3;a:8:{s:6:"header";s:99:"function getHTML_coverFlowListElement($imageSrc, $title, $imagealttext, $link, $target = '_self') {";s:11:"parentClass";s:27:"tx_contentcoverflow_mooflow";s:11:"sectionText";a:2:{i:0;s:52:"There havn't been written templates to adjust output";i:1;s:44:"You'll find all hardcoded HTML-snippets here";}s:4:"cDat";a:5:{s:4:"text";s:38:"
+
+Get HTML of cover flow list element
+";s:5:"param";a:5:{i:0;a:2:{i:0;s:6:"string";i:1;s:9:"$imageSrc";}i:1;a:2:{i:0;s:6:"string";i:1;s:6:"$title";}i:2;a:2:{i:0;s:6:"string";i:1;s:13:"$imagealttext";}i:3;a:2:{i:0;s:6:"string";i:1;s:5:"$link";}i:4;a:2:{i:0;s:6:"string";i:1;s:7:"$target";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:26:"$HTML_coverFlowListElement";}s:5:"other";a:1:{i:0;s:44:"@author Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:366:"			// get HTML of image flow list element
+		$HTML_coverFlowListElement = '
+			<a class="mf_link" href="' . $link . '" rel="image" target="' . $target . '" >
+				<img class="mf_image" src="' . $imageSrc . '" title="' . htmlSpecialChars($title) . '" alt="' . htmlSpecialChars($imagealttext) . '" />
+			</a>
+		';
+			// output
+		return $HTML_coverFlowListElement;
+	}
+
+
+	";i:1;i:0;}s:12:"content_size";i:366;s:13:"content_lines";i:11;s:6:"atLine";i:70;}i:5;a:4:{s:6:"header";s:49:"function getHTML_coverFlow($HTML_coverFlowList) {";s:11:"parentClass";s:27:"tx_contentcoverflow_mooflow";s:4:"cDat";a:5:{s:4:"text";s:25:"
+
+Get HTML of cover flow
+";s:5:"param";a:1:{i:0;a:2:{i:0;s:6:"string";i:1;s:19:"$HTML_coverFlowList";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:15:"$HTML_coverFlow";}s:5:"other";a:1:{i:0;s:44:"@author Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:6:"atLine";i:89;}i:7;a:7:{s:6:"header";s:41:"function getHTML_additionalHeaderData() {";s:11:"parentClass";s:27:"tx_contentcoverflow_mooflow";s:4:"cDat";a:5:{s:4:"text";s:37:"
+
+Get additional headers as css & js
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:4:"void";}s:5:"other";a:1:{i:0;s:44:"@author Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:507:"			// get js configs
+			// get topical element and overwrite startID in appConf['js.']['config.']
+		if ($this->appConf['topicAtStart']) {
+			$this->appConf['js.']['config.']['startIndex'] = $this->appConf['topicId'];
+		}
+			// only boolean and integers allowed, strings ar not supported
+		if (is_array($this->appConf['js.']['config.'])) {
+			$configArray = array();
+			foreac
+[...]
+) {
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/contentcoverflow/pi1/tx_contentcoverflow_mooflow.php']);
+}
+
+?>
+";i:1;i:1;}s:12:"content_size";i:2078;s:13:"content_lines";i:59;s:6:"atLine";i:107;}}s:10:"usageCount";a:4:{s:12:"H_12cd5dfd25";a:4:{s:3:"ALL";a:2:{s:12:"makeinstance";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:12:"makeinstance";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:19;s:15:"_functionHeader";s:35:"class tx_contentcoverflow_mooflow {";}s:12:"H_efdf782a5a";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:14;s:15:"_functionHeader";s:99:"function getHTML_coverFlowListElement($imageSrc, $title, $imagealttext, $link, $target = '_self') {";}s:12:"H_b3ddd0607b";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:13;s:15:"_functionHeader";s:49:"function getHTML_coverFlow($HTML_coverFlowList) {";}s:12:"H_f9143d9ec7";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:12;s:15:"_functionHeader";s:41:"function getHTML_additionalHeaderData() {";}}}s:14:"MD5_4826156ea5";a:5:{s:8:"filename";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:8:"filesize";i:13787;s:6:"header";a:5:{s:4:"text";s:156:"
+
+class.tx_contentcoverflow_pi1.php
+
+Plugin 'contentcoverflow' for the 'contentcoverflow' extension.
+Coverflow/slideshow for images from tt_news and others
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:3:{i:0;s:45:"@author  Joerg Kummer <typo3 et enobe dot de>";i:1;s:15:"@package  TYPO3";i:2;s:31:"@subpackage tx_contentcoverflow";}s:11:"other_index";a:3:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}s:8:"@package";a:1:{i:0;s:6:"TYPO3 ";}s:11:"@subpackage";a:1:{i:0;s:20:"tx_contentcoverflow ";}}}s:3:"DAT";a:11:{i:1;a:8:{s:6:"header";s:52:"class tx_contentcoverflow_pi1 extends tslib_pibase {";s:5:"class";i:1;s:11:"parentClass";s:23:"tx_contentcoverflow_pi1";s:4:"cDat";a:5:{s:4:"text";s:156:"
+
+class.tx_contentcoverflow_pi1.php
+
+Plugin 'contentcoverflow' for the 'contentcoverflow' extension.
+Coverflow/slideshow for images from tt_news and others
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"[type]";i:1;s:3:"...";}s:5:"other";a:3:{i:0;s:45:"@author  Joerg Kummer <typo3 et enobe dot de>";i:1;s:15:"@package  TYPO3";i:2;s:31:"@subpackage tx_contentcoverflow";}s:11:"other_index";a:3:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}s:8:"@package";a:1:{i:0;s:6:"TYPO3 ";}s:11:"@subpackage";a:1:{i:0;s:20:"tx_contentcoverflow ";}}}s:7:"content";a:2:{i:0;s:527:"
+	var $cObj; 	// The backReference to the mother cObj object set at call time
+	var $prefixId = 'tx_contentcoverflow_pi1';
+		// Same as class name
+	var $scriptRelPath = 'pi1/class.tx_contentcoverflow_pi1.php'; 	// Path to this script relative to the extension dir.
+	var $extKey = 'contentcoverflow'; 	// The extension key.
+	var $pi_checkCHash = true;
+		// Upload directory for content (contentcoverflow,tt_news,tt_content...)
+	var $uploadDir_ttnews;
+
+	var $HTML;	// instance for HTML output
+	var $errorMsg;	// error messages
+
+
+	";i:1;i:-1;}s:12:"content_size";i:527;s:13:"content_lines";i:14;s:6:"atLine";i:57;}i:3;a:7:{s:6:"header";s:32:"function main($content, $conf) {";s:11:"parentClass";s:23:"tx_contentcoverflow_pi1";s:4:"cDat";a:5:{s:4:"text";s:32:"
+
+The main method of the PlugIn
+";s:5:"param";a:2:{i:0;a:2:{i:0;s:6:"string";i:1;s:28:"$content: The PlugIn content";}i:1;a:2:{i:0;s:5:"array";i:1;s:31:"$conf: The PlugIn configuration";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:53:"$output: The content that is displayed on the website";}s:5:"other";a:1:{i:0;s:44:"@author	Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:507:"		$this->conf = $conf;
+			// Loading TypoScript array into object variable:
+		$this->pi_setPiVarDefaults(); 	// Set default piVars from TS
+			// $this->pi_loadLL();
+			// Loading language-labels
+		$this->pi_initPIflexForm();
+			// Init FlexForm configuration for plugin:
+			// Initialize new cObj object
+		$this->local_cObj = t3lib_div::makeInstance('tslib_cObj'); 	// Local 
+[...]
+>getcoverFlow();
+				// output
+			return $this->pi_wrapInBaseClass($output);
+		} else {
+			return $this->errorMsg;
+		}
+	}
+
+
+	";i:1;i:1;}s:12:"content_size";i:640;s:13:"content_lines";i:22;s:6:"atLine";i:80;}i:5;a:7:{s:6:"header";s:17:"function init() {";s:11:"parentClass";s:23:"tx_contentcoverflow_pi1";s:4:"cDat";a:5:{s:4:"text";s:45:"
+
+Initialize configs by TS-configs (stdWrap)
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}s:5:"other";a:1:{i:0;s:44:"@author	Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:507:"			// upload dir
+		$this->uploadDir_ttnews = ($this->conf['tt_news.']['uploadDir']) ? $this->conf['tt_news.']['uploadDir'] : 'uploads/pics/';
+			// cover flow app
+		if ($this->conf['coverFlowApp']) {
+			switch(trim($this->conf['coverFlowApp'])) {
+				default:
+				case 'imageflow':
+					require_once(t3lib_extMgm::extPath('contentcoverflow').'pi1/class.tx_contentcoverflow_im
+[...]
+s->errorMsg .= '
+				No CoverFlow application loaded. Please check TypoScript Setup: \'include from static\'
+			';
+		}
+	}
+
+
+	";i:1;i:1;}s:12:"content_size";i:1346;s:13:"content_lines";i:32;s:6:"atLine";i:109;}i:7;a:7:{s:6:"header";s:25:"function getcoverFlow() {";s:11:"parentClass";s:23:"tx_contentcoverflow_pi1";s:4:"cDat";a:5:{s:4:"text";s:17:"
+
+Get image flow
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:15:"$HTML_coverFlow";}s:5:"other";a:1:{i:0;s:44:"@author	Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:507:"			// get news
+		$newsArray = $this->getElements_ttnews();
+			// get others
+		$othersArray = array();
+			// merge news and others
+		$itemsArray = array_merge($newsArray, $othersArray);
+			// sort news and others
+		$itemsArraySorted = $this->getElementsArraySorted($itemsArray,'date');
+			// get topical element
+		$topicId = $this->getTopicElement($itemsArraySorted,'date');
+	
+[...]
+L of additional headers (js,css)
+		$this->HTML->getHTML_additionalHeaderData();
+			// output
+		return $HTML_coverFlow;
+	}
+
+
+	";i:1;i:1;}s:12:"content_size";i:722;s:13:"content_lines";i:21;s:6:"atLine";i:148;}i:9;a:7:{s:6:"header";s:31:"function getElements_ttnews() {";s:11:"parentClass";s:23:"tx_contentcoverflow_pi1";s:4:"cDat";a:5:{s:4:"text";s:28:"
+
+Get elements from tt_news
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:10:"$newsArray";}s:5:"other";a:1:{i:0;s:44:"@author	Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:507:"			// categories
+		$catIdList = $this->pi_getFFvalue($this->cObj->data['pi_flexform'], 'contentcoverflow_ttnews_categories', 'sDEF');
+		$limit = $this->pi_getFFvalue($this->cObj->data['pi_flexform'], 'contentcoverflow_ttnews_limit', 'sDEF');
+			// where
+		$where = '1=1';
+			// where lang
+		$where .= ' AND (tt_news.sys_language_uid IN (0,-1) OR (tt_news.sys_language_uid=0 A
+[...]
+rray($res, 'tt_news');
+			// free res
+		$GLOBALS['TYPO3_DB']->sql_free_result($res);
+			// output
+		return $newsArray;
+	}
+
+
+	";i:1;i:1;}s:12:"content_size";i:1467;s:13:"content_lines";i:33;s:6:"atLine";i:176;}i:11;a:7:{s:6:"header";s:41:"function getElementsArray($res, $table) {";s:11:"parentClass";s:23:"tx_contentcoverflow_pi1";s:4:"cDat";a:5:{s:4:"text";s:40:"
+
+Get elements from a resource as array
+";s:5:"param";a:2:{i:0;a:2:{i:0;s:6:"object";i:1;s:4:"$res";}i:1;a:2:{i:0;s:6:"string";i:1;s:6:"$table";}}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:11:"$itemsArray";}s:5:"other";a:1:{i:0;s:44:"@author	Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:507:"			// item values depend on table
+		switch($table) {
+			case 'tt_news':
+				$imageUploadDir = $this->uploadDir_ttnews;
+				$linkPid = $this->pi_getFFvalue($this->cObj->data['pi_flexform'], 'contentcoverflow_ttnews_page', 'sDEF');
+				$urlParameterKey = 'tx_ttnews[tt_news]';
+				break;
+		}
+			// items as array
+		$itemsArray = array();
+		while ($row = $GLOBALS['TYPO3_DB']->s
+[...]
+
+		#if(is_array($itemsDisabled)) t3lib_div::debug($itemsDisabled,'$itemsDisabled');
+			// output
+		return $itemsArray;
+	}
+
+
+	";i:1;i:1;}s:12:"content_size";i:1216;s:13:"content_lines";i:40;s:6:"atLine";i:218;}i:13;a:7:{s:6:"header";s:62:"function getElementsArraySorted($unsortedArray, $key='date') {";s:11:"parentClass";s:23:"tx_contentcoverflow_pi1";s:4:"cDat";a:5:{s:4:"text";s:209:"
+
+Get elements array sorted
+
+When you query a DB you usually put your record set inside of a multi-dimentional array.
+This method will allow you to sort your record set by column after you put it in an array.
+";s:5:"param";a:2:{i:0;a:2:{i:0;s:5:"array";i:1;s:14:"$unsortedArray";}i:1;a:2:{i:0;s:6:"string";i:1;s:4:"$key";}}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:12:"$sortedArray";}s:5:"other";a:1:{i:0;s:92:"@author	Jeremy Swinborne 20-Jul-2005 <http://de2.php.net/manual/en/function.usort.php#54957>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:84:"Jeremy Swinborne 20-Jul-2005 <http://de2.php.net/manual/en/function.usort.php#54957>";}}}s:7:"content";a:2:{i:0;s:405:"			// set sorted array
+		$sortedArray = $unsortedArray;
+			// run each element
+		for ($i=0; $i < sizeof($sortedArray)-1; $i++) {
+			for ($j=0; $j<sizeof($sortedArray)-1-$i; $j++) {
+				if ($sortedArray[$j][$key] > $sortedArray[$j+1][$key]) {
+					$tmp = $sortedArray[$j];
+					$sortedArray[$j] = $sortedArray[$j+1];
+					$sortedArray[$j+1] = $tmp;
+				}
+			}
+		}
+			// output
+		return $sortedArray;
+	}
+
+
+	";i:1;i:0;}s:12:"content_size";i:405;s:13:"content_lines";i:17;s:6:"atLine";i:270;}i:15;a:7:{s:6:"header";s:62:"function getTopicElement($itemsArraySorted, $itemKey='date') {";s:11:"parentClass";s:23:"tx_contentcoverflow_pi1";s:4:"cDat";a:5:{s:4:"text";s:27:"
+
+Get most topical element
+";s:5:"param";a:2:{i:0;a:2:{i:0;s:5:"array";i:1;s:15:"elements sorted";}i:1;a:2:{i:0;s:6:"[type]";i:1;s:13:"$itemKey: ...";}}s:6:"return";a:2:{i:0;s:3:"int";i:1;s:19:"id of topic element";}s:5:"other";a:1:{i:0;s:44:"@author	Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:507:"		if ($this->conf['topicAtStart']) {
+				// now
+			$now = time();
+				// younger or older than now? default: 'older than now'
+			$timed = $this->conf['topicTimedFromNow'];
+			switch($timed) {
+				default:
+				case 'older':
+					$currentDate = 0;
+						// search topical element
+					if(is_array($itemsArraySorted)) {
+						foreach($itemsArraySorted as $key => $val) {
+							
+[...]
+->appConf['topicAtStart'] = TRUE;
+			$this->HTML->appConf['topicId'] = $topicId;
+				// output
+			return $topicId;
+		}
+	}
+
+
+	";i:1;i:1;}s:12:"content_size";i:1191;s:13:"content_lines";i:49;s:6:"atLine";i:296;}i:17;a:7:{s:6:"header";s:40:"function getcoverFlowList($itemsArray) {";s:11:"parentClass";s:23:"tx_contentcoverflow_pi1";s:4:"cDat";a:5:{s:4:"text";s:45:"
+
+Get HTML of image flow list with each item
+";s:5:"param";a:1:{i:0;a:2:{i:0;s:5:"array";i:1;s:11:"$itemsArray";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:19:"$HTML_coverFlowList";}s:5:"other";a:1:{i:0;s:44:"@author	Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:507:"			// run each item and build HTML of coverFlowlist
+		if (is_array($itemsArray)) {
+			foreach ($itemsArray as $id => $item) {
+					// image
+				$imageSrc = $item['image'];
+					// text
+				$title = $item['title'];
+				$imagealttext = $item['imagealttext'];
+					// link
+				$pid = $item['linkPid'];
+				$urlParameters = array(
+					$item['urlParameter']['key'] => $item['urlP
+[...]
+FlowListElement($imageSrc, $title, $imagealttext, $link, $target);
+			}
+		}
+			// output
+		return $HTML_coverFlowList;
+	}
+
+
+	";i:1;i:1;}s:12:"content_size";i:719;s:13:"content_lines";i:25;s:6:"atLine";i:353;}i:19;a:4:{s:6:"header";s:52:"function checkImageSrc($imageName,$imageUploadDir) {";s:11:"parentClass";s:23:"tx_contentcoverflow_pi1";s:4:"cDat";a:5:{s:4:"text";s:32:"
+
+Check real existence of image
+";s:5:"param";a:2:{i:0;a:2:{i:0;s:6:"string";i:1;s:10:"$imageName";}i:1;a:2:{i:0;s:6:"string";i:1;s:15:"$imageUploadDir";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:9:"$imageSrc";}s:5:"other";a:1:{i:0;s:44:"@author	Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:6:"atLine";i:387;}i:21;a:7:{s:6:"header";s:53:"function getImageSrc($imageFile, $imageConfig = '') {";s:11:"parentClass";s:23:"tx_contentcoverflow_pi1";s:4:"cDat";a:5:{s:4:"text";s:62:"
+
+Get image in predefined size as cObject (copy in temp/pics)
+";s:5:"param";a:2:{i:0;a:2:{i:0;s:5:"array";i:1;s:10:"$imageFile";}i:1;a:2:{i:0;s:5:"array";i:1;s:12:"$imageConfig";}}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:9:"$imageSrc";}s:5:"other";a:1:{i:0;s:44:"@author	Joerg Kummer <typo3 et enobe dot de>";}s:11:"other_index";a:1:{s:7:"@author";a:1:{i:0;s:36:"Joerg Kummer <typo3 et enobe dot de>";}}}s:7:"content";a:2:{i:0;s:507:"
+		if (!$imageConfig) {
+			$imageConfig = array (
+			'file' => $imageFile,
+				'file.' => array (
+				'maxW' => $this->conf['images.']['image_max_width'],
+				'maxH' => $this->conf['images.']['image_max_height'],
+				)
+			);
+		} else {
+			$imageConfig['file'] = $imageFile;
+		}
+			// build and get temporary imgage file
+		$imageSrc = $this->local_cObj->IMG_RESOURCE($imageCon
+[...]
+{
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/contentcoverflow/pi1/class.tx_contentcoverflow_pi1.php']);
+}
+
+?>
+";i:1;i:1;}s:12:"content_size";i:664;s:13:"content_lines";i:24;s:6:"atLine";i:408;}}s:10:"usageCount";a:11:{s:12:"H_a4a81a38b3";a:2:{s:24:"_searchtime_milliseconds";d:13;s:15:"_functionHeader";s:52:"class tx_contentcoverflow_pi1 extends tslib_pibase {";}s:12:"H_12a661a898";a:2:{s:24:"_searchtime_milliseconds";d:10;s:15:"_functionHeader";s:32:"function main($content, $conf) {";}s:12:"H_5b5f9e0a98";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:10;s:15:"_functionHeader";s:17:"function init() {";}s:12:"H_8028822428";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:11;s:15:"_functionHeader";s:25:"function getcoverFlow() {";}s:12:"H_6624bc6c1a";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:11;s:15:"_functionHeader";s:31:"function getElements_ttnews() {";}s:12:"H_8d95e317ee";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:12;s:15:"_functionHeader";s:41:"function getElementsArray($res, $table) {";}s:12:"H_7e576bbdec";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:12;s:15:"_functionHeader";s:62:"function getElementsArraySorted($unsortedArray, $key='date') {";}s:12:"H_9f19b0d916";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:14;s:15:"_functionHeader";s:62:"function getTopicElement($itemsArraySorted, $itemKey='date') {";}s:12:"H_7f7f062adb";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:11;s:15:"_functionHeader";s:40:"function getcoverFlowList($itemsArray) {";}s:12:"H_3c4a49b487";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:12;s:15:"_functionHeader";s:52:"function checkImageSrc($imageName,$imageUploadDir) {";}s:12:"H_d810374363";a:4:{s:3:"ALL";a:2:{s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:14:"MD5_4826156ea5";a:3:{s:8:"fileName";s:37:"pi1/class.tx_contentcoverflow_pi1.php";s:11:"objectUsage";i:1;s:5:"TOTAL";i:1;}s:24:"_searchtime_milliseconds";d:12;s:15:"_functionHeader";s:53:"function getImageSrc($imageFile, $imageConfig = '') {";}}}}}

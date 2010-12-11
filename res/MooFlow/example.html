@@ -1,0 +1,58 @@
+<!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+	<script language="JavaScript" type="text/javascript" src="mootools-1.2-core.js"></script>
+	<script language="JavaScript" type="text/javascript" src="mootools-1.2-more.js"></script>
+	<script language="JavaScript" type="text/javascript" src="MooFlow.Mod.js"></script> 
+	<link rel="stylesheet" type="text/css" href="MooFlow.css" />
+	<script type="text/javascript">
+		/* <![CDATA[ */
+			var myMooFlowPage = {
+				start: function(){
+					var mf = new MooFlow($('MooFlow'), {
+						reflection: 0.5,
+						heightRatio: 0.58,
+						bgColor: "#ffffff",
+						useCaption: true,
+						useWindowResize: true,
+						useMouseWheel: true,
+						useKeyInput: true,
+						useViewer: true,
+						'onClickView': function(obj){
+							myMooFlowPage.link(obj);
+						}  
+					});
+				},
+				link: function(result){
+					if(result.target == "_blank") {
+						document.location = result.href;
+					} else {
+						document.location = result.href;
+					}
+				}
+			};
+			
+			window.addEvent('domready', myMooFlowPage.start);
+		
+		/* ]]> */
+	</script> 
+</head>
+<body>
+	<div id="MooFlow" class="mf">
+		<a href="http://www.domain.tld" rel="image" target="_blank">
+			<img src="img/at_symbol.jpg" alt="" longdesc="" title="" />
+		</a>
+		<a href="http://www.domain.tld" rel="image" target="_blank">
+			<img src="img/farbraum.jpg" alt="" longdesc="" title="" />
+		</a>
+		<a href="http://www.domain.tld" rel="image" target="_blank">
+			<img src="img/stimme_von_oben.jpg" alt="" longdesc="" title="" />
+		</a>
+		<a href="http://www.domain.tld" rel="image" target="_blank">
+			<img src="img/tropfen.jpg" alt="" longdesc="" title="" />
+		</a>
+	</div>
+</body>
+</html>

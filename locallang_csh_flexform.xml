@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>CSH labels for the contentcoverflow Frontend Plugin</description>
+		<type>CSH</type>
+		<csh_table></csh_table>
+		<fileId>EXT:contentcoverflow/locallang_csh_flexform.xml</fileId>
+		<labelContext type="array"></labelContext>
+	</meta>
+	<data type="array">
+		<languageKey index="de" type="array">
+			<!-- tt_news -->
+			<label index="contentcoverflow_ttnews_categories.description">Wählen Sie die Kategorie(n) der anzuzeigenden Nachrichten!
+			
+			Es werden nur aktuelle Nachrichten angezeigt, die zu den gewählten Kategorien gehören und ein Bild beinhalten.
+			</label>
+			<label index="contentcoverflow_ttnews_limit.description">Wählen Sie die maximale Anzahl der anzuzeigenden Nachrichten!
+			
+			Es werden von den letzten aktuellen Nachrichten diese Anzahl an Nachrichten ausgegeben die ein Bild beinhalten und zu den oben gewählten Kategorien gehören.
+			</label>
+			<label index="contentcoverflow_ttnews_page.description">Wählen Sie die Seite die zu den angezeigten Nachrichten verlinkt werden soll!
+			
+			Die Bilder im Coverflow werden dann zur Detail-Ansichts Seite verlinkt, um die gewählte Nachricht anzeigen zu können.
+			</label>
+		</languageKey>
+	</data>
+</T3locallang>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'contentcoverflow'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tt_content.list_type_pi1">CoverFlow</label>
+			<!-- sheets -->
+			<label index="tx_contentcoverflow.pi1_flexform.generalTab">General</label>
+			<!-- tt_news -->
+			<label index="tx_contentcoverflow.pi1_flexform.ttnews.categories">EXT:tt_news categories</label>
+			<label index="tx_contentcoverflow.pi1_flexform.ttnews.limit">EXT:tt_news count/limit</label>
+			<label index="tx_contentcoverflow.pi1_flexform.ttnews.page">EXT:tt_news single view page</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tt_content.list_type_pi1">CoverFlow</label>
+			<!-- sheets -->
+			<label index="tx_contentcoverflow.pi1_flexform.generalTab">Generelle Einstellungen</label>
+			<!-- tt_news -->
+			<label index="tx_contentcoverflow.pi1_flexform.ttnews.categories">Nachrichten: Kategorie-Auswahl</label>
+			<label index="tx_contentcoverflow.pi1_flexform.ttnews.limit">Nachrichten: max Anzahl Beiträge</label>
+			<label index="tx_contentcoverflow.pi1_flexform.ttnews.page">Nachrichten: Seite für Ansicht der Beiträge</label>
+		</languageKey>
+	</data>
+</T3locallang>
