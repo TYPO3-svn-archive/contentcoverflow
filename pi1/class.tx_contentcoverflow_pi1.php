@@ -27,19 +27,20 @@
  *
  *
  *
- *   59: class tx_contentcoverflow_pi1 extends tslib_pibase
- *   82:     function main($content, $conf)
- *  111:     function init()
- *  150:     function getcoverFlow()
- *  178:     function getElements_ttnews()
- *  220:     function getElementsArray($res, $table)
- *  272:     function getElementsArraySorted($unsortedArray, $key='date')
- *  298:     function getTopicElement($itemsArraySorted, $itemKey='date')
- *  355:     function getcoverFlowList($itemsArray)
- *  389:     function checkImageSrc($imageName,$imageUploadDir)
- *  410:     function getImageSrc($imageFile, $imageConfig = '')
+ *   60: class tx_contentcoverflow_pi1 extends tslib_pibase
+ *   83:     function main($content, $conf)
+ *  113:     function init()
+ *  152:     function getcoverFlow()
+ *  179:     function getContentsArray()
+ *  226:     function getElements_contentTable($selectArray,$vDef='vDEF')
+ *  273:     function getElementsArray($res, $table)
+ *  330:     function getElementsArraySorted($unsortedArray, $key='date')
+ *  356:     function getTopicElement($itemsArraySorted, $itemKey='date')
+ *  413:     function getcoverFlowList($itemsArray)
+ *  447:     function checkImageSrc($imageName,$imageUploadDir)
+ *  468:     function getImageSrc($imageFile, $imageConfig = '')
  *
- * TOTAL FUNCTIONS: 10
+ * TOTAL FUNCTIONS: 11
  * (This index is automatically created/updated by the extension "extdeveval")
  *
  */
@@ -80,13 +81,14 @@ class tx_contentcoverflow_pi1 extends tslib_pibase {
 	 * @author	Joerg Kummer <typo3 et enobe dot de>
 	 */
 	function main($content, $conf) {
+			// set config
 		$this->conf = $conf;
 			// Loading TypoScript array into object variable:
 		$this->pi_setPiVarDefaults(); 	// Set default piVars from TS
-			// $this->pi_loadLL();
 			// Loading language-labels
-		$this->pi_initPIflexForm();
+		#$this->pi_loadLL();
 			// Init FlexForm configuration for plugin:
+		$this->pi_initPIflexForm();
 			// Initialize new cObj object
 		$this->local_cObj = t3lib_div::makeInstance('tslib_cObj'); 	// Local cObj.
 			// further initalises (..prozess TS-configs)
@@ -148,12 +150,12 @@ class tx_contentcoverflow_pi1 extends tslib_pibase {
 	 * @author	Joerg Kummer <typo3 et enobe dot de>
 	 */
 	function getcoverFlow() {
-			// get news
-		$newsArray = $this->getElements_ttnews();
+			// *?
+		$contentsArray = $this->getContentsArray();
 			// get others
-		$othersArray = array();
+		#$othersArray = array();
 			// merge news and others
-		$itemsArray = array_merge($newsArray, $othersArray);
+		$itemsArray = $contentsArray[0]; # array_merge($contentTableArray, $othersArray);
 			// sort news and others
 		$itemsArraySorted = $this->getElementsArraySorted($itemsArray,'date');
 			// get topical element
@@ -168,44 +170,95 @@ class tx_contentcoverflow_pi1 extends tslib_pibase {
 		return $HTML_coverFlow;
 	}
 
-
 	/**
-	 * Get elements from tt_news
+	 * Get contents
 	 *
-	 * @return	array		$newsArray
+	 * @return	?
 	 * @author	Joerg Kummer <typo3 et enobe dot de>
 	 */
-	function getElements_ttnews() {
-			// categories
-		$catIdList = $this->pi_getFFvalue($this->cObj->data['pi_flexform'], 'contentcoverflow_ttnews_categories', 'sDEF');
-		$limit = $this->pi_getFFvalue($this->cObj->data['pi_flexform'], 'contentcoverflow_ttnews_limit', 'sDEF');
+	function getContentsArray() {
+		$contentIdList = $this->pi_getFFvalue($this->cObj->data['pi_flexform'], 'contentcoverflow_content', 'sDEF');
+		if (isset($contentIdList)) {
+			$contentIdArray = explode(',',$contentIdList);
+			if (is_array($contentIdArray)) {
+				foreach ($contentIdArray as $key => $contentId) {
+					$contentRows = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('flexform',' tx_contentcoverflow_content','uid IN(' . $contentId . ')',$groupBy,$orderBy,$limit);
+					if (is_array($contentRows)) {
+						foreach ($contentRows as $contentRow) {
+
+							if (isset($contentRow['flexform'])) {
+									// xml2array
+								$flexformArray = t3lib_div::xml2array($contentRow['flexform']);
+								if (is_array($flexformArray['data']['sDEF']['lDEF'])) {
+									$selectArray_sDEF = $flexformArray['data']['sDEF']['lDEF'];
+								}
+								if (is_array($flexformArray['data']['sEXT']['lDEF'])) {
+									$selectArray_sEXT = $flexformArray['data']['sEXT']['lDEF'];
+								}
+								$selectArray = array_merge($selectArray_sDEF,$selectArray_sEXT);
+								/*
+									// define sheet and language
+								$sDef = 'sDEF';
+								$langId = $GLOBALS['TSFE']->config['config']['sys_language_uid'];
+								$lDef = ($langId != 0) ? 'l' . strtoupper($this->LLkey) : 'lDEF';
+								#$vDef;
+								*/
+							}
+							$vDef = 'vDEF';
+							$contentsArray[] = $this->getElements_contentTable($selectArray,$vDef);
+						}
+					}
+				}
+			}
+		}
+		return $contentsArray;
+	}
+
+
+	/**
+	 * Get content elements from selected table
+	 *
+	 * @param	[type]		$selectArray: ...
+	 * @param	[type]		$vDef: ...
+	 * @return	array		$contentArray
+	 * @author	Joerg Kummer <typo3 et enobe dot de>
+	 */
+	function getElements_contentTable($selectArray,$vDef='vDEF') {
 			// where
 		$where = '1=1';
 			// where lang
-		$where .= ' AND (tt_news.sys_language_uid IN (0,-1) OR (tt_news.sys_language_uid=0 AND NOT tt_news.l18n_parent))';
-			// where category
-		$where .= ' AND (IFNULL(tt_news_cat_mm.uid_foreign,0) NOT IN (49,50)) AND (tt_news_cat_mm.uid_foreign IN(' . $catIdList . '))';
+		#$where .= ' AND (' . $selectArray['table'][$vDef] . '.sys_language_uid IN (0,-1) OR (' . $selectArray['table'][$vDef] . '.sys_language_uid=0 AND NOT ' . $selectArray['table'][$vDef] . '.l18n_parent))';
+			// where userdefined
+		if ($selectArray['where'][$vDef]) {
+			$where .= ' AND ' . $selectArray['where'][$vDef];
+		}
 			// where image
-		$where .= ' AND tt_news.image NOT LIKE \'\'';
+		$where .= ' AND ' . $selectArray['table'][$vDef] . '.' . $selectArray['field_image'][$vDef] . ' NOT LIKE \'\'';
 			// where enable fields
-		$where .= $this->cObj->enableFields('tt_news');	// . $this->cObj->enableFields('tt_news_cat');
+		if (is_array($GLOBALS['TCA'][$selectArray['table'][$vDef]]['ctrl']['enablecolumns'])) {
+			$where .= $this->cObj->enableFields($selectArray['table'][$vDef]);	// . $this->cObj->enableFields('tt_news_cat');
+		}
 			// query
 		$queryParts = array(
-			'SELECT' => 'tt_news.uid as uid, tt_news.title as title, tt_news.image as image, tt_news.imagealttext as imagealttext, tt_news.datetime as date',
-			'FROM' => 'tt_news LEFT OUTER JOIN tt_news_cat_mm ON tt_news.uid = tt_news_cat_mm.uid_local',
+			'SELECT' => $selectArray['table'][$vDef] . '.uid as uid,
+			' . $selectArray['table'][$vDef] . '.' . $selectArray['field_title'][$vDef] . ' as title,
+			' . $selectArray['table'][$vDef] . '.' . $selectArray['field_image'][$vDef] . ' as image,
+			' . $selectArray['table'][$vDef] . '.' . $selectArray['field_imagecaption'][$vDef] . ' as imagealttext,
+			' . $selectArray['table'][$vDef] . '.' . $selectArray['field_date'][$vDef] . ' as date',
+			'FROM' => ($selectArray['from'][$vDef])? $selectArray['from'][$vDef] : $selectArray['table'][$vDef],
 			'WHERE' => $where,
-			'GROUPBY' => 'tt_news.uid',
-			'ORDERBY' => 'tt_news.datetime DESC',
-			'LIMIT' => $limit,
+			'GROUPBY' => $selectArray['table'][$vDef] . '.uid',
+			'ORDERBY' => $selectArray['table'][$vDef] . '.' . $selectArray['field_date'][$vDef] . ' DESC',
+			'LIMIT' => $selectArray['limit'][$vDef],
 		);
 		/* use of '$GLOBALS['TYPO3_DB']->exec_SELECT_mm_query()' fails */
 		$res = $GLOBALS['TYPO3_DB']->exec_SELECT_queryArray($queryParts);
 			// array of elements
-		$newsArray = $this->getElementsArray($res, 'tt_news');
+		$contentArray = $this->getElementsArray($res, $selectArray['table'][$vDef]);
 			// free res
 		$GLOBALS['TYPO3_DB']->sql_free_result($res);
 			// output
-		return $newsArray;
+		return $contentArray;
 	}
 
 
@@ -224,6 +277,11 @@ class tx_contentcoverflow_pi1 extends tslib_pibase {
 				$imageUploadDir = $this->uploadDir_ttnews;
 				$linkPid = $this->pi_getFFvalue($this->cObj->data['pi_flexform'], 'contentcoverflow_ttnews_page', 'sDEF');
 				$urlParameterKey = 'tx_ttnews[tt_news]';
+				break;
+			case 'tt_content':
+				$imageUploadDir = 'uploads/pics/';
+				$linkPid = $this->pi_getFFvalue($this->cObj->data['pi_flexform'], 'contentcoverflow_ttnews_page', 'sDEF');
+				$urlParameterKey = 'tx_tt_content[tt_content]';
 				break;
 		}
 			// items as array
@@ -291,7 +349,7 @@ class tx_contentcoverflow_pi1 extends tslib_pibase {
 	 * Get most topical element
 	 *
 	 * @param	array		elements sorted
-	 * @param	[type]		$itemKey: ...
+	 * @param	string		$itemKey: like 'crdate' or 'datetime'
 	 * @return	int		id of topic element
 	 * @author	Joerg Kummer <typo3 et enobe dot de>
 	 */

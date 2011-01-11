@@ -7,21 +7,29 @@
 	<data type="array">
 		<languageKey index="default" type="array">
 			<label index="tt_content.list_type_pi1">CoverFlow</label>
-			<!-- sheets -->
+			<!-- plugin -->
 			<label index="tx_contentcoverflow.pi1_flexform.generalTab">General</label>
-			<!-- tt_news -->
-			<label index="tx_contentcoverflow.pi1_flexform.ttnews.categories">EXT:tt_news categories</label>
-			<label index="tx_contentcoverflow.pi1_flexform.ttnews.limit">EXT:tt_news count/limit</label>
-			<label index="tx_contentcoverflow.pi1_flexform.ttnews.page">EXT:tt_news single view page</label>
+			<!-- TCA -->
+			<label index="tx_contentcoverflow_content">Content</label>
+			<label index="tx_contentcoverflow_content.title">Title</label>
+			<label index="tx_contentcoverflow_content.flexform">Flexform</label>
+			<label index="tx_contentcoverflow_content.flexform.select">-- Select one --</label>
+			<!-- sheet general -->
+			<label index="tx_contentcoverflow_content.flexform.sheet_general">General</label>
+			<label index="tx_contentcoverflow_content.flexform.table">Table</label>
+			<label index="tx_contentcoverflow_content.flexform.limit">Max items (limit)</label>
+			<label index="tx_contentcoverflow_content.flexform.field_title">Title field</label>
+			<label index="tx_contentcoverflow_content.flexform.field_image">Image field</label>
+			<label index="tx_contentcoverflow_content.flexform.field_imagecaption">Image caption/altext field</label>
+			<label index="tx_contentcoverflow_content.flexform.field_date">Date field</label>
+			<label index="tx_contentcoverflow_content.flexform.spid">SingleView Pid</label>
+			<!-- sheet extend -->
+			<label index="tx_contentcoverflow_content.flexform.sheet_extend">Extend</label>
+			<label index="tx_contentcoverflow_content.flexform.where">WhereClause</label>
+			<label index="tx_contentcoverflow_content.flexform.from">From (leave blank or use for JOINS only!)</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="tt_content.list_type_pi1">CoverFlow</label>
-			<!-- sheets -->
-			<label index="tx_contentcoverflow.pi1_flexform.generalTab">Generelle Einstellungen</label>
-			<!-- tt_news -->
-			<label index="tx_contentcoverflow.pi1_flexform.ttnews.categories">Nachrichten: Kategorie-Auswahl</label>
-			<label index="tx_contentcoverflow.pi1_flexform.ttnews.limit">Nachrichten: max Anzahl Beiträge</label>
-			<label index="tx_contentcoverflow.pi1_flexform.ttnews.page">Nachrichten: Seite für Ansicht der Beiträge</label>
 		</languageKey>
 	</data>
 </T3locallang>

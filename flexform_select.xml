@@ -1,0 +1,178 @@
+<T3DataStructure>
+
+	<meta>
+		<langDisable>1</langDisable>
+		<langChildren>0</langChildren>
+	</meta>
+	
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.sheet_general</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<table>
+						<TCEforms>
+							<label>LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.table</label>
+							<onChange>reload</onChange>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>tx_contentcoverflow_customtca->selectItemsTCA_tables</itemsProcFunc>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.select</numIndex>
+										<numIndex index="1">0</numIndex>
+									</numIndex>
+								</items>
+								<min>1</min>
+								<max>1</max>
+							</config>
+						</TCEforms>
+					</table>
+					<limit>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.limit</label>
+							<displayCond>FIELD:table:!=:0</displayCond>
+							<config>
+								<type>input</type>
+								<size>5</size>
+								<max>5</max>
+								<eval>int</eval>
+							</config>
+						</TCEforms>
+					</limit>
+					<field_title>
+						<TCEforms>
+							<label>LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.field_title</label>
+							<displayCond>FIELD:table:!=:0</displayCond>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>tx_contentcoverflow_customtca->selectItemsTCA_tableFields</itemsProcFunc>
+								<!-- FIELD:eeflashcontent_type:!=:1 -->
+								<itemsProcFunc_config>
+									<table>	table:!=:1</table>
+								</itemsProcFunc_config>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.select</numIndex>
+										<numIndex index="1">0</numIndex>
+									</numIndex>
+								</items>
+								<min>1</min>
+								<max>1</max>
+							</config>
+						</TCEforms>
+					</field_title>
+					<field_image>
+						<TCEforms>
+							<label>LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.field_image</label>
+							<displayCond>FIELD:table:!=:0</displayCond>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>tx_contentcoverflow_customtca->selectItemsTCA_tableFields</itemsProcFunc>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.select</numIndex>
+										<numIndex index="1">0</numIndex>
+									</numIndex>
+								</items>
+								<min>1</min>
+								<max>1</max>
+							</config>
+						</TCEforms>
+					</field_image>
+					<field_imagecaption>
+						<TCEforms>
+							<label>LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.field_imagecaption</label>
+							<displayCond>FIELD:table:!=:0</displayCond>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>tx_contentcoverflow_customtca->selectItemsTCA_tableFields</itemsProcFunc>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.select</numIndex>
+										<numIndex index="1">0</numIndex>
+									</numIndex>
+								</items>
+								<min>1</min>
+								<max>1</max>
+							</config>
+						</TCEforms>
+					</field_imagecaption>
+					<field_date>
+						<TCEforms>
+							<label>LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.field_date</label>
+							<displayCond>FIELD:table:!=:0</displayCond>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>tx_contentcoverflow_customtca->selectItemsTCA_tableFields</itemsProcFunc>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.select</numIndex>
+										<numIndex index="1">0</numIndex>
+									</numIndex>
+								</items>
+								<min>1</min>
+								<max>1</max>
+							</config>
+						</TCEforms>
+					</field_date>
+					<spid>
+						<TCEforms>
+							<label>LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.spid</label>
+							<displayCond>FIELD:table:!=:0</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>1</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</spid>
+				</el>
+			</ROOT>
+		</sDEF>
+		<sEXT>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.sheet_extend</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<from>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.from</label>
+							<displayCond>FIELD:table:!=:0</displayCond>
+							<config>
+								<type>text</type>
+								<cols>80</cols>
+								<rows>3</rows>
+							</config>
+						</TCEforms>
+					</from>
+					<where>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:contentcoverflow/locallang_db.xml:tx_contentcoverflow_content.flexform.where</label>
+							<displayCond>FIELD:table:!=:0</displayCond>
+							<config>
+								<type>text</type>
+								<cols>80</cols>
+								<rows>3</rows>
+							</config>
+						</TCEforms>
+					</where>
+				</el>
+			</ROOT>
+		</sEXT>
+
+	</sheets>
+
+</T3DataStructure>
